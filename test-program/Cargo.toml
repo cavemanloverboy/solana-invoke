@@ -5,7 +5,7 @@ edition = "2021"
 
 [lib]
 crate-type = ["cdylib", "lib"]
-name = "double_transfer"
+name = "triple_transfer"
 
 [dependencies]
 solana-program = "1.18.1"

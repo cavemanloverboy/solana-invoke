@@ -77,7 +77,7 @@ mod tests {
         let program_id = Pubkey::new_unique();
         let mut program_test = ProgramTest::default();
         program_test.prefer_bpf(true);
-        program_test.add_program("double_transfer", program_id, None);
+        program_test.add_program("triple_transfer", program_id, None);
         let mut ctx = program_test.start_with_context().await;
 
         // Initialize two accounts: sender and receiver
