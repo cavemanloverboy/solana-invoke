@@ -11,7 +11,7 @@ The compute and heap savings scale with the amount of accounts and data passed i
 ```rust
 // test-program schematic. logs and asserts are redacted.
 
-// A simple solana program that transfers 1 lamport twice
+// A simple solana program that transfers 1 lamport thrice
 fn process_instruction(
     _program_id: &Pubkey,
     accounts: &[AccountInfo],
