@@ -15,8 +15,7 @@ use solana_program::{
 ///
 /// StableInstruction uses NonNull<T> which is invariant over T.
 /// NonNull<T> is clonable. It's the same type used by Rc<T> and
-/// Arc<T>. It is safe to have an aliasing p
-/// ointer to the same
+/// Arc<T>. It is safe to have an aliasing pointer to the same
 /// allocation as the underlying vectors so long as we perform
 /// no modificiations.
 pub struct InstructionStabilizer<'a> {
