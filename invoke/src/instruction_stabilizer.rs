@@ -89,9 +89,9 @@ pub struct StableVec<T> {
     _marker: PhantomData<T>,
 }
 
-// Only to be used by super::stable_instruction, but only ancestors are allowed for visibility
+
 #[inline(always)] // only one call site (wrapper fn) so inline there
-pub(super) fn stabilize_instruction<'ix_ref>(
+fn stabilize_instruction<'ix_ref>(
     ix: &'ix_ref Instruction,
 ) -> InstructionStabilizer<'ix_ref> {
     // Get StableVec out of instruction data Vec<u8>
@@ -127,7 +127,7 @@ pub(super) fn stabilize_instruction<'ix_ref>(
 
     InstructionStabilizer::<'ix_ref>::new(
         ManuallyDrop::new(StableInstruction {
-            // Transmuting between identical declared repr(C) structs
+            // Transmuting between identical repr(C) structs
             accounts: unsafe { core::mem::transmute(accounts) },
             data: unsafe { core::mem::transmute(data) },
             program_id: ix.program_id,
