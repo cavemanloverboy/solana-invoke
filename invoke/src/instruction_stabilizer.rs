@@ -23,9 +23,6 @@ use solana_program::{
 /// A constructor api is chosen internally over simply making the inner type
 /// pub(super) or pub(super) so that not even users within this crate (outside
 /// of this module) can modify the inner type.
-///
-/// Most importantly...
-/// No unsafe code was written in the creation or usage of this type :)
 pub struct InstructionStabilizer<'a> {
     /// A stable instruction that will not be dropped. By circumventing the
     /// `Drop` implementation, this becomes a view (similar to a slice)
@@ -130,7 +127,7 @@ pub(super) fn stabilize_instruction<'ix_ref>(
 
     InstructionStabilizer::<'ix_ref>::new(
         ManuallyDrop::new(StableInstruction {
-            // Transmuting between identically declared repr(C) structs
+            // Transmuting between identical declared repr(C) structs
             accounts: unsafe { core::mem::transmute(accounts) },
             data: unsafe { core::mem::transmute(data) },
             program_id: ix.program_id,
