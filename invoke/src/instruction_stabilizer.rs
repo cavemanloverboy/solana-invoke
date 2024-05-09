@@ -19,10 +19,6 @@ use solana_program::{
 /// ointer to the same
 /// allocation as the underlying vectors so long as we perform
 /// no modificiations.
-///
-/// A constructor api is chosen internally over simply making the inner type
-/// pub(super) or pub(super) so that not even users within this crate (outside
-/// of this module) can modify the inner type.
 pub struct InstructionStabilizer<'a> {
     /// A stable instruction that will not be dropped. By circumventing the
     /// `Drop` implementation, this becomes a view (similar to a slice)
@@ -49,13 +45,8 @@ impl<'ix> InstructionStabilizer<'ix> {
         stabilize_instruction(instruction)
     }
 
-    /// NOTE:
-    ///
-    /// A constructor api is chosen internally over simply making the inner type
-    /// pub(super) or pub(super) so that not even users within this crate (outside
-    /// of this module) can modify the inner type.
     #[inline(always)]
-    pub(super) fn new(
+    fn new(
         stabilized_instruction: core::mem::ManuallyDrop<StableInstruction>,
         // Note: This is where 'ix is inherited
         _instruction: &'ix Instruction,
