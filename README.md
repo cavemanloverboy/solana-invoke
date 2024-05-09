@@ -30,7 +30,7 @@ fn process_instruction(
     // 2) Then with our invoke_signed
     solana_invoke::invoke(&transfer, &accounts[..2])?;
 
-    // 3) Then with our invoke_signed
+    // 3) Then with our invoke_unchecked
     solana_invoke::invoke_unchecked(&transfer, &accounts[..2])?;
 
     Ok(())
