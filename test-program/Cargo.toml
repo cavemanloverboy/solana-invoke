@@ -1,0 +1,17 @@
+[package]
+name = "test-program"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "double_transfer"
+
+[dependencies]
+solana-program = "1.18.1"
+solana-invoke = { workspace = true }
+
+[dev-dependencies]
+solana-program-test = "1.18.1"
+solana-sdk = "1.18.1"
+tokio = { version = "1.37.0", features = ["rt", "macros"] }

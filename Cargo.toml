@@ -1,0 +1,6 @@
+[workspace]
+members = ["invoke", "test-program"]
+
+
+[workspace.dependencies]
+solana-invoke = { path = "./invoke" }

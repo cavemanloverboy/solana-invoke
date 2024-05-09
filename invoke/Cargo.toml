@@ -1,0 +1,16 @@
+[package]
+name = "solana-invoke"
+version = "0.1.0"
+edition = "2021"
+authors = [
+    "Cavey Cool <caveycool@gmail.com>",
+    "Magnetar Fields <0xMAGNETAR@proton.me>",
+]
+license = "MIT OR Apache-2.0"
+description = "A drop-in replacement for `solana_program::program::invoke*` with better compute and heap efficiency."
+repository = "https://github.com/cavemanloverboy/solana-invoke"
+
+
+[dependencies]
+solana-nostd-entrypoint = "0.3.0"
+solana-program = "1.18.1"
