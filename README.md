@@ -20,7 +20,7 @@ fn process_instruction(
     // Send from account zero to account one, thrice.
     // 1) First with standard invoke.
     // 2) Then with our invoke
-    // 3) Then with our invoke_signed_unchecked
+    // 3) Then with our invoke_unchecked
     let transfer =
         solana_program::system_instruction::transfer(accounts[0].key, accounts[1].key, 1);
 
