@@ -1,6 +1,6 @@
 [workspace]
 members = ["invoke", "test-program"]
-
+resolver = "2"
 
 [workspace.dependencies]
 solana-invoke = { path = "./invoke" }

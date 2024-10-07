@@ -12,5 +12,4 @@ repository = "https://github.com/cavemanloverboy/solana-invoke"
 
 
 [dependencies]
-solana-nostd-entrypoint = "0.3.0"
-solana-program = "1.18.1"
+solana-program = ">1.18.0"
