@@ -12,4 +12,4 @@ repository = "https://github.com/cavemanloverboy/solana-invoke"
 
 
 [dependencies]
-solana-program = ">1.18.0"
+solana-program = "2.1"
